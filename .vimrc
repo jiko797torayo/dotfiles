@@ -1,0 +1,1 @@
+/Users/koji/.vim/janus/vim/vimrc
