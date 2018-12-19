@@ -43,6 +43,9 @@ NeoBundle 'vim-jp/vimdoc-ja'
 " gitで管理しているファイル編集時に差分を表現する
 NeoBundle 'airblade/vim-gitgutter'
 
+" vim-tags
+NeoBundle 'szw/vim-tags'
+
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
@@ -73,7 +76,11 @@ set fileformats=unix,dos,mac
 " 入力中のコマンドをステータスに表示する
 set showcmd
 " 現在の行を強調表示
-set cursorline
+" set cursorline
+" カーソル行を強調表示しない
+set nocursorline
+" 挿入モードの時のみ、カーソル行をハイライトする
+autocmd InsertEnter,InsertLeave * set cursorline!
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 "タブ入力を複数の空白入力に置き換える
@@ -143,3 +150,9 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+" vimtags
+let g:vim_tags_project_tags_command = "/usr/local/bin/ctags -f .tags -R . 2>/dev/null"
+let g:vim_tags_gems_tags_command = "/usr/local/bin/ctags -R -f .Gemfile.lock.tags `bundle show --paths` 2>/dev/null"
+set tags+=.tags
+set tags+=.Gemfile.lock.tags
+nnoremap <C-]> g<C-]>
