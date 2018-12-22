@@ -156,6 +156,7 @@ let g:vim_tags_gems_tags_command = "/usr/local/bin/ctags -R -f .Gemfile.lock.tag
 set tags+=.tags
 set tags+=.Gemfile.lock.tags
 nnoremap <C-]> g<C-]>
+" 挿入モード中にC-jで次の行へ
 inoremap <C-j> <Esc>$o
 " qのみでquit
 nnoremap q :<C-u>q<CR>
