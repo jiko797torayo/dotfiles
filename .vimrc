@@ -157,3 +157,5 @@ set tags+=.tags
 set tags+=.Gemfile.lock.tags
 nnoremap <C-]> g<C-]>
 inoremap <C-j> <Esc>$o
+" qのみでquit
+nnoremap q :<C-u>q<CR>
