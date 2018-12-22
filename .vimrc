@@ -81,6 +81,10 @@ set showcmd
 set nocursorline
 " 挿入モードの時のみ、カーソル行をハイライトする
 autocmd InsertEnter,InsertLeave * set cursorline!
+" カーソル列を強調表示しない
+set nocursorcolumn
+" 挿入モードの時のみ、カーソル列をハイライトする
+autocmd InsertEnter,InsertLeave * set cursorcolumn!
 " 行末の1文字先までカーソルを移動できるように
 " set virtualedit=onemore
 "タブ入力を複数の空白入力に置き換える
