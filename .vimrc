@@ -164,3 +164,6 @@ nnoremap <C-]> g<C-]>
 inoremap <C-j> <Esc>$o
 " qのみでquit
 nnoremap q :<C-u>q<CR>
+" クリップボードと連携
+set clipboard=unnamed,autoselect
+vnoremap <C-y> "+y
