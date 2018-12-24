@@ -56,6 +56,9 @@ NeoBundle 'tpope/vim-surround'
 " gitで管理しているファイル編集時に差分を表現する
 NeoBundle 'airblade/vim-gitgutter'
 
+" slimファイルハイライト
+NeoBundle "slim-template/vim-slim"
+
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
@@ -216,8 +219,9 @@ let g:syntastic_ruby_checkers = ['rubocop']
 "----------------------------------------------------------
 colorscheme molokai " カラースキームにmolokaiを設定する
 set t_Co=256 " iTerm2など既に256色環境なら無くても良い
-syntax enable " 構文に色を付ける
-
+" syntax enable " 構文に色を付ける
+execute pathogen#infect()
+syntax on
 " ファイル形式の検出の有効化する
 " ファイル形式別プラグインのロードを有効化する
 " ファイル形式別インデントのロードを有効化する
