@@ -59,6 +59,9 @@ NeoBundle 'airblade/vim-gitgutter'
 " slimファイルハイライト
 NeoBundle "slim-template/vim-slim"
 
+" rubyファイルハイライト
+NeoBundle     'vim-ruby/vim-ruby'
+
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
@@ -223,7 +226,9 @@ set t_Co=256 " iTerm2など既に256色環境なら無くても良い
 execute pathogen#infect()
 syntax on
 " ファイル形式の検出の有効化する
-" ファイル形式別プラグインのロードを有効化する
+filetype on
 " ファイル形式別インデントのロードを有効化する
+filetype indent on
+" ファイル形式別プラグインのロードを有効化する
 filetype plugin indent on
 
