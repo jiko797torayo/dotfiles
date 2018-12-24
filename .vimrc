@@ -21,6 +21,22 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
+" カラースキームmolokai
+NeoBundle 'tomasr/molokai'
+" コード補完
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'marcus/rsense'
+NeoBundle 'supermomonga/neocomplete-rsense.vim'
+
+" 静的解析
+NeoBundle 'scrooloose/syntastic'
+
+" ドキュメント参照
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'yuku-t/vim-ref-ri'
+
+" 自動で閉じる
+NeoBundle 'tpope/vim-endwise'
 
 " 一括コメントアウト gc
 NeoBundle 'tpope/vim-commentary'
@@ -37,14 +53,8 @@ nmap <silent><C-n> :NERDTreeToggle<CR>
 " cs"' / ys[text object]"
 NeoBundle 'tpope/vim-surround'
 
-" Helpの日本語化
-NeoBundle 'vim-jp/vimdoc-ja'
-
 " gitで管理しているファイル編集時に差分を表現する
 NeoBundle 'airblade/vim-gitgutter'
-
-" vim-tags
-NeoBundle 'szw/vim-tags'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -59,9 +69,6 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
-
-" シンタックスハイライト
-syntax enable
 
 " vim の矩形選択で文字が無くても右へ進める
 set virtualedit=block
@@ -78,8 +85,6 @@ set showcmd
 " 現在の行を強調表示
 " set cursorline
 " カーソル行を強調表示しない
-set nocursorline
-" 挿入モードの時のみ、カーソル行をハイライトする
 autocmd InsertEnter,InsertLeave * set cursorline!
 " カーソル列を強調表示しない
 set nocursorcolumn
@@ -125,45 +130,96 @@ autocmd BufWritePre * :%s/\s\+$//ge
 set number
 " アップデートタイムを高速化（git用）
 set updatetime=250
-" カラースキーマ変更
-colorscheme stereokai
 " タブ機能を強化
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
+
+" 分割したウインドウそのものを移動する
 nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
+
+" 次のタブに切り替え
 nnoremap sn gt
+"
+" 前のタブに切り替え
 nnoremap sp gT
+
 nnoremap sr <C-w>r
+
+" 大きさを揃える
 nnoremap s= <C-w>=
-nnoremap sw <C-w>w
-nnoremap so <C-w>_<C-w>|
 nnoremap sO <C-w>=
-nnoremap sN :<C-u>bn<CR>
-nnoremap sP :<C-u>bp<CR>
+
+" 新規タブ
 nnoremap st :<C-u>tabnew<CR>
-nnoremap sT :<C-u>Unite tab<CR>
+
+" 別のウインドウへ
+nnoremap sw <C-w>w
+
+" 水平分割
 nnoremap ss :<C-u>sp<CR>
+
+" 垂直分割
 nnoremap sv :<C-u>vs<CR>
+
+" ウインドウを閉じる
 nnoremap sq :<C-u>q<CR>
+
+" バッファを閉じる
 nnoremap sQ :<C-u>bd<CR>
-nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
-nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
-" vimtags
-let g:vim_tags_project_tags_command = "/usr/local/bin/ctags -f .tags -R . 2>/dev/null"
-let g:vim_tags_gems_tags_command = "/usr/local/bin/ctags -R -f .Gemfile.lock.tags `bundle show --paths` 2>/dev/null"
-set tags+=.tags
-set tags+=.Gemfile.lock.tags
-nnoremap <C-]> g<C-]>
+
 " 挿入モード中にC-jで次の行へ
 inoremap <C-j> <Esc>$o
+
 " qのみでquit
 nnoremap q :<C-u>q<CR>
+
 " クリップボードと連携
 set clipboard=unnamed,autoselect
 vnoremap <C-y> "+y
+
+" スワップファイルを作成しない
+set noswapfile
+
+" -------------------------------
+" Rsense
+" -------------------------------
+let g:rsenseHome = '/usr/local/lib/rsense-0.3'
+let g:rsenseUseOmniFunc = 1
+
+" --------------------------------
+" neocomplete.vim
+" --------------------------------
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
+
+" --------------------------------
+" rubocop
+" --------------------------------
+" syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
+" active_filetypesに、保存時にsyntasticを走らせるファイルタイプを指定する
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']
+
+"----------------------------------------------------------
+" molokaiの設定
+"----------------------------------------------------------
+colorscheme molokai " カラースキームにmolokaiを設定する
+set t_Co=256 " iTerm2など既に256色環境なら無くても良い
+syntax enable " 構文に色を付ける
+
+" ファイル形式の検出の有効化する
+" ファイル形式別プラグインのロードを有効化する
+" ファイル形式別インデントのロードを有効化する
+filetype plugin indent on
+
