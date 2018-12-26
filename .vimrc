@@ -21,8 +21,10 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
+
 " カラースキームmolokai
 NeoBundle 'tomasr/molokai'
+
 " コード補完
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'marcus/rsense'
@@ -78,65 +80,91 @@ NeoBundleCheck
 
 " vim の矩形選択で文字が無くても右へ進める
 set virtualedit=block
+
 " 挿入モードでバックスペースで削除できるようにする
 set backspace=indent,eol,start
+
 " jjで挿入モード終了＆保存
 inoremap <silent> jj <ESC>:w<CR>
+
 "文字コードをUFT-8に設定
 set fenc=utf-8
 set encoding=utf-8
 set fileformats=unix,dos,mac
+
 " 入力中のコマンドをステータスに表示する
 set showcmd
-" 現在の行を強調表示
-" set cursorline
+
 " カーソル行を強調表示しない
 autocmd InsertEnter,InsertLeave * set cursorline!
+
 " カーソル列を強調表示しない
 set nocursorcolumn
+
 " 挿入モードの時のみ、カーソル列をハイライトする
 autocmd InsertEnter,InsertLeave * set cursorcolumn!
-" 行末の1文字先までカーソルを移動できるように
-" set virtualedit=onemore
+
 "タブ入力を複数の空白入力に置き換える
 set expandtab
+
 "画面上でタブ文字が占める幅
 set tabstop=2
+
 "自動インデントでずれる幅
 set shiftwidth=2
+
 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
 set softtabstop=2
+
 "改行時に前の行のインデントを継続する
 set autoindent
+
 "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set smartindent
+
 " ステータス行を常に表示
 set laststatus=2
+
 " メッセージ表示欄を2行確保
 set cmdheight=2
+
 " 対応する括弧を強調表示
 set showmatch
+
 " 検索文字列をハイライトする
 set hlsearch
+
 " インクリメンタルサーチを行う
 set incsearch
+
 " 大文字と小文字を区別しない
 set ignorecase
+
 " 最後尾まで検索を終えたら次の検索で先頭に移る
 set wrapscan
+
 " ハイライトをESC×2回で消す
 nnoremap <silent> <Esc><Esc> :noh<CR>
+
 " 挿入モードではハイライトを無効
 autocmd InsertEnter * set nohlsearch
+
 " 挿入モード以外ではハイライトを有効
 autocmd InsertLeave * set hlsearch
+
 " 保存時に行末スペースを削除
 autocmd BufWritePre * :%s/\s\+$//ge
+
 " 行番号を追加
 set number
+
 " アップデートタイムを高速化（git用）
 set updatetime=250
+
+" -------------------------------
 " タブ機能を強化
+" -------------------------------
+" タブ間を移動
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -155,6 +183,7 @@ nnoremap sn gt
 " 前のタブに切り替え
 nnoremap sp gT
 
+" タブを入れ替え
 nnoremap sr <C-w>r
 
 " 大きさを揃える
@@ -175,9 +204,6 @@ nnoremap sv :<C-u>vs<CR>
 
 " ウインドウを閉じる
 nnoremap sq :<C-u>q<CR>
-
-" バッファを閉じる
-nnoremap sQ :<C-u>bd<CR>
 
 " 挿入モード中にC-jで次の行へ
 inoremap <C-j> <Esc>$o
@@ -209,26 +235,20 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
 
-" --------------------------------
-" rubocop
-" --------------------------------
-" syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
-" active_filetypesに、保存時にsyntasticを走らせるファイルタイプを指定する
-" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
-" let g:syntastic_ruby_checkers = ['rubocop']
-
 "----------------------------------------------------------
 " molokaiの設定
 "----------------------------------------------------------
-colorscheme molokai " カラースキームにmolokaiを設定する
-set t_Co=256 " iTerm2など既に256色環境なら無くても良い
-" syntax enable " 構文に色を付ける
+colorscheme molokai
+set t_Co=256
 execute pathogen#infect()
 syntax on
-" ファイル形式の検出の有効化する
+
+" ファイル形式の検出を有効化する
 filetype on
+
 " ファイル形式別インデントのロードを有効化する
 filetype indent on
+
 " ファイル形式別プラグインのロードを有効化する
 filetype plugin indent on
 
