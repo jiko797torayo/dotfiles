@@ -27,8 +27,6 @@ NeoBundle 'tomasr/molokai'
 
 " コード補完
 NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'marcus/rsense'
-NeoBundle 'supermomonga/neocomplete-rsense.vim'
 
 " 静的解析
 NeoBundle 'scrooloose/syntastic'
@@ -217,12 +215,6 @@ vnoremap <C-y> "+y
 
 " スワップファイルを作成しない
 set noswapfile
-
-" -------------------------------
-" Rsense
-" -------------------------------
-let g:rsenseHome = '/usr/local/lib/rsense-0.3'
-let g:rsenseUseOmniFunc = 1
 
 " --------------------------------
 " neocomplete.vim
