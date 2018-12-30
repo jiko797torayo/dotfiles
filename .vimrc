@@ -252,3 +252,6 @@ filetype indent on
 " ファイル形式別プラグインのロードを有効化する
 filetype plugin indent on
 
+" ctagsの設定
+nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
