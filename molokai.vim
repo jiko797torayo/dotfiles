@@ -144,16 +144,16 @@ if &t_Co > 255
       hi CursorLine               ctermbg=23   cterm=none
       hi CursorLineNr ctermfg=208               cterm=none
    endif
-   hi Boolean         ctermfg=135
+   hi Boolean         ctermfg=214
    hi Character       ctermfg=144
-   hi Number          ctermfg=135
-   hi String          ctermfg=164
+   hi Number          ctermfg=141
+   hi String          ctermfg=107
    hi Conditional     ctermfg=161               cterm=bold
-   hi Constant        ctermfg=135               cterm=bold
+   hi Constant        ctermfg=214               cterm=bold
    hi Cursor          ctermfg=16  ctermbg=253
    hi Debug           ctermfg=225               cterm=bold
    hi Define          ctermfg=81
-   hi Delimiter       ctermfg=241
+   hi Delimiter       ctermfg=107
 
    hi DiffAdd                     ctermbg=24
    hi DiffChange      ctermfg=181 ctermbg=239
@@ -167,7 +167,7 @@ if &t_Co > 255
    hi Float           ctermfg=135
    hi FoldColumn      ctermfg=67  ctermbg=16
    hi Folded          ctermfg=67  ctermbg=16
-   hi Function        ctermfg=118
+   hi Function        ctermfg=208
    hi Identifier      ctermfg=208               cterm=none
    hi Ignore          ctermfg=244 ctermbg=232
    hi IncSearch       ctermfg=193 ctermbg=16
@@ -215,7 +215,7 @@ if &t_Co > 255
    hi Todo            ctermfg=231 ctermbg=232   cterm=bold
 
    hi Typedef         ctermfg=81
-   hi Type            ctermfg=81                cterm=none
+   hi Type            ctermfg=196                cterm=none
    hi Underlined      ctermfg=244               cterm=underline
 
    hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
