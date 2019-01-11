@@ -65,6 +65,9 @@ NeoBundle     'vim-ruby/vim-ruby'
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
+" auto-ctagsを導入 :Ctags で実行
+NeoBundle 'soramugi/auto-ctags.vim'
+
 " Required:
 call neobundle#end()
 
