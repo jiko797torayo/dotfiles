@@ -94,7 +94,7 @@ function git(){hub "$@"} # zsh
 alias g="git"
 compdef g=git
 
-alias gs='git status --short --branch'
+alias gs='git status'
 alias ga='git add -A'
 alias gap='git add -p'
 alias gc='git commit -m'
