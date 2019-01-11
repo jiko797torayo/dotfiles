@@ -96,6 +96,7 @@ compdef g=git
 
 alias gs='git status --short --branch'
 alias ga='git add -A'
+alias gap='git add -p'
 alias gc='git commit -m'
 alias gps='git push'
 alias gpsu='git push -u origin'
