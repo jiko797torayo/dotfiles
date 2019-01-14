@@ -92,14 +92,13 @@ function git(){hub "$@"} # zsh
 # --------------------------------------------------
 
 alias g="git"
-compdef g=git
-
 alias gs='git status'
 alias ga='git add -A'
 alias gap='git add -p'
 alias gc='git commit -m'
 alias gps='git push'
 alias gpsu='git push -u origin'
+alias gpsf='git push -f origin'
 alias gp='git pull origin'
 alias gf='git fetch'
 alias gfp='git fetch -p'
@@ -120,6 +119,8 @@ alias gbr='git branch -r'
 
 alias gm='git merge'
 alias gr='git reset'
+alias grf='git reflog'
+alias grh='git reset --hard'
 
 # --------------------------------------------------
 #  bundleのエイリアス
