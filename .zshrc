@@ -132,3 +132,10 @@ alias berr='bundle exec rake routes'
 alias berdc='bundle exec rake db:create'
 alias berdm='bundle exec rake db:migrate'
 alias bi='bundle install --path vendor/bundle'
+
+# --------------------------------------------------
+#  コマンドラインのエイリアス
+# --------------------------------------------------
+
+alias v='vim'
+alias vz='vim ~/.zshrc'
