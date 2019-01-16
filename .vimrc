@@ -68,6 +68,9 @@ NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 " auto-ctagsを導入 :Ctags で実行
 NeoBundle 'soramugi/auto-ctags.vim'
 
+" 検索を強化
+NeoBundle 'rking/ag.vim'
+
 " Required:
 call neobundle#end()
 
