@@ -15,7 +15,6 @@ PROMPT='
 autoload -Uz vcs_info
 setopt prompt_subst
 
-# true | false
 # trueで作業ブランチの状態に応じて表示を変える
 zstyle ':vcs_info:*' check-for-changes false
 # addしてない場合の表示
