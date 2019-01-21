@@ -138,6 +138,8 @@ alias bi='bundle install --path vendor/bundle'
 
 alias v='vim'
 alias vz='vim ~/.zshrc'
+alias vj='vim ~/japanpoint'
+alias vw='vim ~/wt'
 
 # --------------------------------------------------
 #  自動補完をイクリメンタルサーチ化
