@@ -111,15 +111,6 @@ autocmd InsertEnter,InsertLeave * set cursorcolumn!
 "タブ入力を複数の空白入力に置き換える
 set expandtab
 
-""画面上でタブ文字が占める幅
-"set tabstop=2
-
-""自動インデントでずれる幅
-"set shiftwidth=2
-
-""連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
-"set softtabstop=2
-
 "改行時に前の行のインデントを継続する
 set autoindent
 
