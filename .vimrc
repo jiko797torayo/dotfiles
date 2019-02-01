@@ -267,3 +267,8 @@ if has("autocmd")
   autocmd FileType sass        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType javascript  setlocal sw=4 sts=4 ts=4 et
 endif
+
+" バッファコマンドの追加
+nnoremap <silent>bp :bprevious<CR>
+nnoremap <silent>bn :bnext<CR>
+nnoremap <silent>bb :b#<CR>
