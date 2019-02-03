@@ -275,3 +275,8 @@ nnoremap <silent>bb :b#<CR>
 
 " 挿入モードでカーソルを右に移動する
 imap <C-l> <Right>
+
+" space2回でカーソル下の単語をハイライトする
+nnoremap <silent> <Space><Space> "zyiw:let @/ = @z<CR>:set hlsearch<CR>
+" ＃を押すとカーソル下単語をハイライトしてから置換後文字列を入力する状態にする
+nmap # <Space><Space>:%s/<C-r>///gc<Left><Left><Left>
