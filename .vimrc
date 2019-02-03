@@ -272,3 +272,6 @@ endif
 nnoremap <silent>bp :bprevious<CR>
 nnoremap <silent>bn :bnext<CR>
 nnoremap <silent>bb :b#<CR>
+
+" 挿入モードでカーソルを右に移動する
+imap <C-l> <Right>
