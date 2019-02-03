@@ -200,9 +200,6 @@ nnoremap sv :<C-u>vs<CR>
 " ウインドウを閉じる
 nnoremap sq :<C-u>q<CR>
 
-" 挿入モード中にC-jで次の行へ
-inoremap <C-j> <Esc>$o
-
 " qのみでquit
 nnoremap q :<C-u>q<CR>
 
@@ -280,3 +277,17 @@ imap <C-l> <Right>
 nnoremap <silent> <Space><Space> "zyiw:let @/ = @z<CR>:set hlsearch<CR>
 " ＃を押すとカーソル下単語をハイライトしてから置換後文字列を入力する状態にする
 nmap # <Space><Space>:%s/<C-r>///gc<Left><Left><Left>
+
+" 改行コマンド
+if !has('gui_running')
+  " CUIで入力された<S-CR>,<C-S-CR>が拾えないので
+  " iTerm2のキー設定を利用して特定の文字入力をmapする
+  map ✠ <S-CR>
+  imap ✠ <S-CR>
+  map ✢ <C-S-CR>
+  imap ✢ <C-S-CR>
+endif
+imap <S-CR> <End><CR>
+imap <C-S-CR> <Up><End><CR>
+nnoremap <S-CR> mzo<ESC>`z
+nnoremap <C-S-CR> mzO<ESC>`z
