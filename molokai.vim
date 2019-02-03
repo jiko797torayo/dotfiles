@@ -141,7 +141,7 @@ if &t_Co > 255
       hi CursorLineNr ctermfg=208               cterm=none
    else
       hi Normal       ctermfg=252 ctermbg=233
-      hi CursorLine               ctermbg=23   cterm=none
+      hi CursorLine               ctermbg=94   cterm=none
       hi CursorLineNr ctermfg=208               cterm=none
    endif
    hi Boolean         ctermfg=214
@@ -219,13 +219,13 @@ if &t_Co > 255
    hi Underlined      ctermfg=244               cterm=underline
 
    hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
-   hi VisualNOS                   ctermbg=23
-   hi Visual                      ctermbg=23
+   hi VisualNOS                   ctermbg=94
+   hi Visual                      ctermbg=94
    hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
    hi WildMenu        ctermfg=81  ctermbg=16
 
    hi Comment         ctermfg=29
-   hi CursorColumn                ctermbg=23
+   hi CursorColumn                ctermbg=94
    hi ColorColumn                 ctermbg=236
    hi LineNr          ctermfg=250 ctermbg=236
    hi NonText         ctermfg=59
@@ -262,7 +262,7 @@ if &t_Co > 255
        hi Statement       ctermfg=197               cterm=bold
        hi Tag             ctermfg=197
        hi Title           ctermfg=203
-       hi Visual                      ctermbg=23
+       hi Visual                      ctermbg=94
 
        hi Comment         ctermfg=244
        hi LineNr          ctermfg=239 ctermbg=235
