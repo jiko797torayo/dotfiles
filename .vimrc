@@ -291,3 +291,10 @@ imap <S-CR> <End><CR>
 imap <C-S-CR> <Up><End><CR>
 nnoremap <S-CR> mzo<ESC>`z
 nnoremap <C-S-CR> mzO<ESC>`z
+
+" 自動囲みコマンド
+vnoremap { "zdi{<C-R>z}<ESC>
+vnoremap [ "zdi[<C-R>z]<ESC>
+vnoremap ( "zdi(<C-R>z)<ESC>
+vnoremap " "zdi"<C-R>z"<ESC>
+vnoremap ' "zdi'<C-R>z'<ESC>
