@@ -120,6 +120,7 @@ alias gm='git merge'
 alias gr='git reset'
 alias grf='git reflog'
 alias grh='git reset --hard'
+alias gbd='git branch -d'
 
 # --------------------------------------------------
 #  bundleのエイリアス
