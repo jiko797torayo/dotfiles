@@ -71,6 +71,11 @@ NeoBundle 'soramugi/auto-ctags.vim'
 " 検索を強化
 NeoBundle 'rking/ag.vim'
 
+" コードを書いてすぐ結果を見る
+NeoBundle 'thinca/vim-quickrun'
+silent! nmap <Space>r <Plug>(quickrun)
+let g:quickrun_config={'*': {'split': 'below'}}
+
 " Required:
 call neobundle#end()
 
