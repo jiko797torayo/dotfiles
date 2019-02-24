@@ -1,4 +1,11 @@
 export PATH="$HOME/.rbenv/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/qt/lib"
+# export CPPFLAGS="-I/usr/local/opt/qt/include"
+# echo 'export PATH="/usr/local/opt/qt/bin:$PATH"'
+# export PATH="/usr/local/opt/qt/bin:$PATH"
+# export PKG_CONFIG_PATH="/usr/local/opt/qt/lib/pkgconfig"
+# echo 'export PATH="$(brew --prefix qt@5.5)/bin:$PATH"'
+# echo 'export PATH="/usr/local/opt/qt@5.5/bin:$PATH"'
 eval "$(rbenv init - zsh)"
 # --------------------------------------------------
 #  カレントディレクトリ表示（左）

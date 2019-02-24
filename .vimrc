@@ -303,3 +303,8 @@ vnoremap [ "zdi[<C-R>z]<ESC>
 vnoremap ( "zdi(<C-R>z)<ESC>
 vnoremap " "zdi"<C-R>z"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
+
+" タブ設定
+set tabstop=2
+set shiftwidth=2
+set expandtab
