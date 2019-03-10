@@ -71,20 +71,6 @@ SPROMPT="correct: $RED%R$DEFAULT -> $GREEN%r$DEFAULT ? [Yes/No/Abort/Edit] => "
 
 # cdを使わずにディレクトリを移動できる
 setopt auto_cd
-# $ cd - でTabを押すと、ディレクトリの履歴が見れる
-setopt auto_pushd
-
-# --------------------------------------------------
-#  $ tree でディレクトリ構成表示
-# --------------------------------------------------
-
-alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/| /g'"
-
-# --------------------------------------------------
-#  hub導入
-# --------------------------------------------------
-
-function git(){hub "$@"} # zsh
 
 # --------------------------------------------------
 #  git エイリアス
@@ -101,21 +87,14 @@ alias gpsf='git push -f origin'
 alias gp='git pull origin'
 alias gf='git fetch'
 alias gfp='git fetch -p'
-
 # logを見やすく
 alias gl='git log --abbrev-commit --no-merges --date=short --date=iso'
-# grep
-alias glg='git log --abbrev-commit --no-merges --date=short --date=iso --grep'
-# ローカルコミットを表示
-alias glc='git log --abbrev-commit --no-merges --date=short --date=iso origin/html..html'
-
 alias gd='git diff'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gbr='git branch -r'
-
 alias gm='git merge'
 alias gr='git reset'
 alias grf='git reflog'
