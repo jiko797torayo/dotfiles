@@ -16,7 +16,7 @@ autoload -Uz vcs_info
 setopt prompt_subst
 
 # trueで作業ブランチの状態に応じて表示を変える
-zstyle ':vcs_info:*' check-for-changes false
+zstyle ':vcs_info:*' check-for-changes true
 # addしてない場合の表示
 zstyle ':vcs_info:*' unstagedstr "%F{red}%B＋%b%f"
 # commitしてない場合の表示
