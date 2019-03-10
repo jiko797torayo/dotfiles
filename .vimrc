@@ -65,9 +65,6 @@ NeoBundle     'vim-ruby/vim-ruby'
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
-" auto-ctagsを導入 :Ctags で実行
-NeoBundle 'soramugi/auto-ctags.vim'
-
 " 検索を強化
 NeoBundle 'rking/ag.vim'
 
@@ -177,24 +174,12 @@ nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
 
-" 次のタブに切り替え
-nnoremap sn gt
-"
-" 前のタブに切り替え
-nnoremap sp gT
-
-" タブを入れ替え
-nnoremap sr <C-w>r
-
 " 大きさを揃える
 nnoremap s= <C-w>=
 nnoremap sO <C-w>=
 
 " 新規タブ
 nnoremap st :<C-u>tabnew<CR>
-
-" 別のウインドウへ
-nnoremap sw <C-w>w
 
 " 水平分割
 nnoremap ss :<C-u>sp<CR>
@@ -308,3 +293,7 @@ vnoremap ' "zdi'<C-R>z'<ESC>
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
+" 閉じタグに飛ぶ
+source /usr/local/share/vim/vim81/macros/matchit.vim
+let b:match_words = '<:>,<div.*>:</div>'
