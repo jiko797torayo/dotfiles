@@ -71,20 +71,6 @@ SPROMPT="correct: $RED%R$DEFAULT -> $GREEN%r$DEFAULT ? [Yes/No/Abort/Edit] => "
 
 # cdを使わずにディレクトリを移動できる
 setopt auto_cd
-# $ cd - でTabを押すと、ディレクトリの履歴が見れる
-setopt auto_pushd
-
-# --------------------------------------------------
-#  $ tree でディレクトリ構成表示
-# --------------------------------------------------
-
-alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/| /g'"
-
-# --------------------------------------------------
-#  hub導入
-# --------------------------------------------------
-
-function git(){hub "$@"} # zsh
 
 # --------------------------------------------------
 #  git エイリアス
@@ -101,21 +87,14 @@ alias gpsf='git push -f origin'
 alias gp='git pull origin'
 alias gf='git fetch'
 alias gfp='git fetch -p'
-
 # logを見やすく
 alias gl='git log --abbrev-commit --no-merges --date=short --date=iso'
-# grep
-alias glg='git log --abbrev-commit --no-merges --date=short --date=iso --grep'
-# ローカルコミットを表示
-alias glc='git log --abbrev-commit --no-merges --date=short --date=iso origin/html..html'
-
 alias gd='git diff'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gbr='git branch -r'
-
 alias gm='git merge'
 alias gr='git reset'
 alias grf='git reflog'
@@ -143,6 +122,16 @@ alias vj='vim ~/japanpoint'
 alias vw='vim ~/wt'
 alias vv='vim ~/.vimrc'
 alias vm='vim ~/marketplace'
+
+# --------------------------------------------------
+#  コマンド履歴対策
+# --------------------------------------------------
+setopt HIST_IGNORE_DUPS           # 前と重複する行は記録しない
+setopt HIST_IGNORE_ALL_DUPS       # 履歴中の重複行をファイル記録前に無くす
+setopt HIST_IGNORE_SPACE          # 行頭がスペースのコマンドは記録しない
+setopt HIST_FIND_NO_DUPS          # 履歴検索中、(連続してなくとも)重複を飛ばす
+setopt HIST_REDUCE_BLANKS         # 余分な空白は詰めて記録
+setopt HIST_NO_STORE              # histroyコマンドは記録しない
 
 # --------------------------------------------------
 #  自動補完をイクリメンタルサーチ化
