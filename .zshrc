@@ -142,6 +142,7 @@ alias vz='vim ~/.zshrc'
 alias vj='vim ~/japanpoint'
 alias vw='vim ~/wt'
 alias vv='vim ~/.vimrc'
+alias vm='vim ~/marketplace'
 
 # --------------------------------------------------
 #  自動補完をイクリメンタルサーチ化
