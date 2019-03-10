@@ -13,14 +13,8 @@ call neobundle#begin(expand('/Users/koji/.vim/bundle'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" Add or remove your Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
+" C-pでファイル検索
 NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
 
 " カラースキームmolokai
 NeoBundle 'tomasr/molokai'
@@ -30,10 +24,6 @@ NeoBundle 'Shougo/neocomplete.vim'
 
 " 静的解析
 NeoBundle 'scrooloose/syntastic'
-
-" ドキュメント参照
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'yuku-t/vim-ref-ri'
 
 " 自動で閉じる
 NeoBundle 'tpope/vim-endwise'
@@ -61,9 +51,6 @@ NeoBundle "slim-template/vim-slim"
 
 " rubyファイルハイライト
 NeoBundle     'vim-ruby/vim-ruby'
-
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 " 検索を強化
 NeoBundle 'rking/ag.vim'
