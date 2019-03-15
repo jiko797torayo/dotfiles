@@ -85,6 +85,7 @@ alias gps='git push -u origin HEAD'
 alias gpsu='git push -u origin'
 alias gpsf='git push -f origin'
 alias gp='git pull origin'
+alias gpm='git pull origin master'
 alias gf='git fetch'
 alias gfp='git fetch -p'
 # logを見やすく
