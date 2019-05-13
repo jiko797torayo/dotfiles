@@ -127,6 +127,7 @@ alias vj='vim ~/japanpoint'
 alias vw='vim ~/wt'
 alias vv='vim ~/.vimrc'
 alias vm='vim ~/marketplace'
+alias va='vim ~/app_ranking_app'
 
 # --------------------------------------------------
 #  コマンド履歴対策
