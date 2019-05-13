@@ -60,6 +60,9 @@ NeoBundle 'thinca/vim-quickrun'
 silent! nmap <Space>r <Plug>(quickrun)
 let g:quickrun_config={'*': {'split': 'below'}}
 
+" vim内でgit操作
+NeoBundle 'tpope/vim-fugitive'
+
 " Required:
 call neobundle#end()
 
