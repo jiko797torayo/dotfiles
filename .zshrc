@@ -129,6 +129,8 @@ alias vw='vim ~/wt'
 alias vv='vim ~/.vimrc'
 alias vm='vim ~/marketplace'
 alias va='vim ~/app_ranking_app'
+alias vk='vim ~/kura-vel'
+alias vp='vim ~/popai-sekine'
 
 # --------------------------------------------------
 #  コマンド履歴対策
