@@ -116,6 +116,7 @@ alias bi='bundle install --path vendor/bundle'
 alias becsd='bundle exec cap staging deploy'
 alias becsc='bundle exec cap staging rails:c'
 alias bers='bundle exec rails s'
+alias becpd='bundle exec cap production deploy'
 
 # --------------------------------------------------
 #  コマンドラインのエイリアス
