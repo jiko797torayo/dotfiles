@@ -1,0 +1,146 @@
+" vim の矩形選択で文字が無くても右へ進める
+set virtualedit=block
+
+" 挿入モードでバックスペースで削除できるようにする
+set backspace=indent,eol,start
+
+" jjで挿入モード終了＆保存
+inoremap jj <ESC>
+
+"文字コードをUFT-8に設定
+set fenc=utf-8
+set encoding=utf-8
+set fileformats=unix,dos,mac
+
+" 入力中のコマンドをステータスに表示する
+set showcmd
+
+" カーソル列を強調表示しない
+set nocursorcolumn
+
+"タブ入力を複数の空白入力に置き換える
+set expandtab
+
+"改行時に前の行のインデントを継続する
+set autoindent
+
+"改行時に入力された行の末尾に合わせて次の行のインデントを増減する
+set smartindent
+
+" ステータス行を常に表示
+set laststatus=2
+
+" メッセージ表示欄を2行確保
+set cmdheight=2
+
+" 対応する括弧を強調表示
+set showmatch
+
+" 検索文字列をハイライトする
+set hlsearch
+
+" インクリメンタルサーチを行う
+set incsearch
+
+" 大文字と小文字を区別しない
+set ignorecase
+
+" 最後尾まで検索を終えたら次の検索で先頭に移る
+set wrapscan
+
+" ハイライトをESC×2回で消す
+nnoremap <silent> <Esc><Esc> :noh<CR>
+
+" 行番号を追加
+set number
+
+" アップデートタイムを高速化（git用）
+set updatetime=250
+
+" -------------------------------
+" タブ機能を強化
+" -------------------------------
+" タブ間を移動
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+
+" 分割したウインドウそのものを移動する
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+
+" 大きさを揃える
+nnoremap s= <C-w>=
+nnoremap sO <C-w>=
+
+" 新規タブ
+nnoremap st :<C-u>tabnew<CR>
+
+" 水平分割
+nnoremap ss :<C-u>sp<CR>
+
+" 垂直分割
+nnoremap sv :<C-u>vs<CR>
+
+" ウインドウを閉じる
+nnoremap sq :<C-u>q<CR>
+
+" qのみでquit
+nnoremap q :<C-u>q<CR>
+
+" クリップボードと連携
+set clipboard=unnamed,autoselect
+vnoremap <C-y> "+y
+
+" スワップファイルを作成しない
+set noswapfile
+
+" ctagsの設定
+nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-b> g<C-]>
+
+
+" バッファコマンドの追加
+nnoremap <silent>bp :bprevious<CR>
+nnoremap <silent>bn :bnext<CR>
+nnoremap <silent>bb :b#<CR>
+
+" 挿入モードでカーソルを右に移動する
+imap <C-l> <Right>
+
+" space2回でカーソル下の単語をハイライトする
+nnoremap <silent> <Space><Space> "zyiw:let @/ = @z<CR>:set hlsearch<CR>
+" ＃を押すとカーソル下単語をハイライトしてから置換後文字列を入力する状態にする
+nmap # <Space><Space>:%s/<C-r>///gc<Left><Left><Left>
+
+" 改行コマンド
+if !has('gui_running')
+  " CUIで入力された<S-CR>,<C-S-CR>が拾えないので
+  " iTerm2のキー設定を利用して特定の文字入力をmapする
+  map ✠ <S-CR>
+  imap ✠ <S-CR>
+  map ✢ <C-S-CR>
+  imap ✢ <C-S-CR>
+endif
+imap <S-CR> <End><CR>
+imap <C-S-CR> <Up><End><CR>
+nnoremap <S-CR> mzo<ESC>`z
+nnoremap <C-S-CR> mzO<ESC>`z
+
+" 自動囲みコマンド
+vnoremap { "zdi{<C-R>z}<ESC>
+vnoremap [ "zdi[<C-R>z]<ESC>
+vnoremap ( "zdi(<C-R>z)<ESC>
+vnoremap " "zdi"<C-R>z"<ESC>
+vnoremap ' "zdi'<C-R>z'<ESC>
+
+" タブ設定
+set tabstop=2
+set shiftwidth=2
+set expandtab
+

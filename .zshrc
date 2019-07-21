@@ -170,9 +170,6 @@ compdef -d java
 compdef -d svn
 compdef -d cvs
 
-# TODO:
-#     cp dir/
-
 now_predict=0
 
 function limit-completion
