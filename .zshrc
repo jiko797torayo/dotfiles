@@ -52,6 +52,7 @@ zstyle ':completion:*' list-colors "${LS_COLORS}"
 
 # 単語の入力途中でもTab補完を有効化
 setopt complete_in_word
+
 # 補完候補をハイライト
 zstyle ':completion:*:default' menu select=1
 # キャッシュの利用による補完の高速化
