@@ -65,7 +65,10 @@ NeoBundle 'tpope/vim-fugitive'
 
 " React用ハイライト
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mxw/vim-jsx'
+" NeoBundle 'mxw/vim-jsx'
+NeoBundle 'maxmellon/vim-jsx-pretty'
+NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'peitalin/vim-jsx-typescript'
 " javascriptとJSXの2つのファイルタイプを指定する
 au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
 
