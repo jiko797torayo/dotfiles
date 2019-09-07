@@ -63,6 +63,13 @@ let g:quickrun_config={'*': {'split': 'below'}}
 " vim内でgit操作
 NeoBundle 'tpope/vim-fugitive'
 
+" React用ハイライト
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
+" javascriptとJSXの2つのファイルタイプを指定する
+au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
+
+
 " Required:
 call neobundle#end()
 
@@ -244,6 +251,7 @@ if has("autocmd")
   autocmd FileType scss        setlocal sw=2 sts=2 ts=2 et
   autocmd FileType sass        setlocal sw=2 sts=2 ts=2 et
   autocmd FileType javascript  setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType jsx         setlocal sw=2 sts=2 ts=2 et
 endif
 
 " バッファコマンドの追加
