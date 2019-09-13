@@ -72,6 +72,9 @@ NeoBundle 'peitalin/vim-jsx-typescript'
 " javascriptとJSXの2つのファイルタイプを指定する
 au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
 
+" emmet
+NeoBundle 'mattn/emmet-vim'
+let g:user_emmet_leader_key='<C-k>'
 
 " Required:
 call neobundle#end()
