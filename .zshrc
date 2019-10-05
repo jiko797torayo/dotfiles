@@ -1,4 +1,7 @@
 export PATH="$HOME/.rbenv/bin:$PATH"
+export ANDROID_SDK=/Users/koji/Library/Android/sdk
+export PATH=/Users/koji/Library/Android/sdk/platform-tools:$PATH
+
 eval "$(rbenv init - zsh)"
 # --------------------------------------------------
 #  カレントディレクトリ表示（左）
