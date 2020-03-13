@@ -1,6 +1,7 @@
 export PATH="$HOME/.rbenv/bin:$PATH"
 export ANDROID_SDK=/Users/koji/Library/Android/sdk
 export PATH=/Users/koji/Library/Android/sdk/platform-tools:$PATH
+export EDITOR="vi"
 
 eval "$(rbenv init - zsh)"
 # --------------------------------------------------
@@ -121,6 +122,7 @@ alias becsd='bundle exec cap staging deploy'
 alias becsc='bundle exec cap staging rails:c'
 alias bers='bundle exec rails s'
 alias becpd='bundle exec cap production deploy'
+alias bercre='bundle exec rails credentials:edit'
 
 # --------------------------------------------------
 #  コマンドラインのエイリアス
