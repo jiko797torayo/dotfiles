@@ -287,3 +287,4 @@ function expand-or-complete-prefix-incr
 		zle expand-or-complete-prefix
 	fi
 }
+export PATH=$PATH:/Users/koji/.nodebrew/current/bin
