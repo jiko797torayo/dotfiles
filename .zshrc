@@ -2,6 +2,10 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export ANDROID_SDK=/Users/koji/Library/Android/sdk
 export PATH=/Users/koji/Library/Android/sdk/platform-tools:$PATH
 export EDITOR="vi"
+export PATH="$PATH:$HOME/.fzf/bin"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_DEFAULT_OPTS='--height 30% --border'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(rbenv init - zsh)"
 # --------------------------------------------------
