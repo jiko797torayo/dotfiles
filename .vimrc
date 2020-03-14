@@ -169,6 +169,13 @@ inoremap <C-l> <Right>
 " qのみでquit
 nnoremap q :<C-u>q<CR>
 
+" , キーで次タブのバッファを表示
+nnoremap <silent> , :bprev<CR>
+" . キーで前タブのバッファを表示
+nnoremap <silent> . :bnext<CR>
+" bdで現在のバッファを削除
+nnoremap bd :bd<CR>
+
 " plugin manager ---------------------------------------------
 
 " 4章で紹介
