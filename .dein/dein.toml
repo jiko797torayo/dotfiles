@@ -16,3 +16,13 @@ hook_add = '''
     let g:airline#extensions#tabline#buffer_idx_mode = 1
     let g:airline#extensions#tabline#fnamemod = ':t'
 '''
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+    let g:indent_guides_enable_on_vim_startup = 1
+    let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+    let g:indent_guides_auto_colors = 0
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=237
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=240
+'''
