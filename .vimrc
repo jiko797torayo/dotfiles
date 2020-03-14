@@ -164,7 +164,10 @@ nnoremap sl <C-w>l
 nnoremap sh <C-w>h
 
 " 挿入モードでカーソルを右に移動する
-imap <C-l> <Right>
+inoremap <C-l> <Right>
+
+" qのみでquit
+nnoremap q :<C-u>q<CR>
 
 " plugin manager ---------------------------------------------
 
