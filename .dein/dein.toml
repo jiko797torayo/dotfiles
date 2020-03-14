@@ -28,7 +28,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
+repo = 'airblade/vim-gitgutter'
 hook_add = '''
     set signcolumn=yes
     let g:gitgutter_async = 1
