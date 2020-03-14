@@ -1,147 +1,53 @@
-"NeoBundle Scripts-----------------------------
-if &compatible
-  set nocompatible
-endif
+" シェルを指定してください
+set shell=/bin/zsh
 
-" Required:
-set runtimepath+=/Users/koji/.vim/bundle/neobundle.vim/
+" encoding
+set encoding=utf8
+scriptencoding utf8
+set fileencoding=utf-8
+set termencoding=utf8
+set fileencodings=utf-8,ucs-boms,euc-jp,ep932
+set fileformats=unix,dos,mac
+set ambiwidth=double
+set nobomb
+set t_Co=256
 
-" Required:
-call neobundle#begin(expand('/Users/koji/.vim/bundle'))
+" スワップファイルの作成先を変更
+set noswapfile
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+" ヤンクをクリップボードへ繋ぐ
+set clipboard+=unnamed
 
-" C-pでファイル検索
-NeoBundle 'ctrlpvim/ctrlp.vim'
+" ビープ音を消す
+set belloff=all
 
-" カラースキームmolokai
-NeoBundle 'tomasr/molokai'
+" 行番号系
+set number
 
-" コード補完
-NeoBundle 'Shougo/neocomplete.vim'
+" タイトル系
+set title
 
-" 静的解析
-NeoBundle 'scrooloose/syntastic'
-
-" 自動で閉じる
-NeoBundle 'tpope/vim-endwise'
-
-" 一括コメントアウト gc
-NeoBundle 'tpope/vim-commentary'
-
-" 括弧の自動入力
-NeoBundle 'Townk/vim-autoclose'
-autocmd FileType ruby setlocal commentstring=#\ %s
-
-" ディレクトリツリー <C-n>
-NeoBundle 'scrooloose/nerdtree'
-nmap <silent><C-n> :NERDTreeToggle<CR>
-
-" 括弧の差し替え、追加、削除
-" cs"' / ys[text object]"
-NeoBundle 'tpope/vim-surround'
-
-" gitで管理しているファイル編集時に差分を表現する
-NeoBundle 'airblade/vim-gitgutter'
-
-" slimファイルハイライト
-NeoBundle "slim-template/vim-slim"
-
-" rubyファイルハイライト
-NeoBundle     'vim-ruby/vim-ruby'
-
-" 検索を強化
-NeoBundle 'rking/ag.vim'
-
-" コードを書いてすぐ結果を見る
-NeoBundle 'thinca/vim-quickrun'
-silent! nmap <Space>r <Plug>(quickrun)
-let g:quickrun_config={'*': {'split': 'below'}}
-
-" vim内でgit操作
-NeoBundle 'tpope/vim-fugitive'
-
-" React用ハイライト
-NeoBundle 'pangloss/vim-javascript'
-" NeoBundle 'mxw/vim-jsx'
-NeoBundle 'maxmellon/vim-jsx-pretty'
-NeoBundle 'leafgarland/typescript-vim'
-NeoBundle 'peitalin/vim-jsx-typescript'
-" javascriptとJSXの2つのファイルタイプを指定する
-au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
-
-" emmet
-NeoBundle 'mattn/emmet-vim'
-let g:user_emmet_leader_key='<C-k>'
-
-" Required:
-call neobundle#end()
-
-" Required:
+" インデント系
 filetype plugin indent on
+set expandtab
+set tabstop=2
+set softtabstop=2
+set autoindent
+set smartindent
+set shiftwidth=2
+au FileType go setlocal sw=4 ts=4 sts=4 noet
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
-
-" vim の矩形選択で文字が無くても右へ進める
-set virtualedit=block
-
-" 挿入モードでバックスペースで削除できるようにする
+" 挿入モードでバックスペース削除を有効
 set backspace=indent,eol,start
 
-" jjで挿入モード終了＆保存
-inoremap <silent> jj <ESC>:w<CR>
+" 検索するときに大文字小文字を区別しない
+set ignorecase
 
-"文字コードをUFT-8に設定
-set fenc=utf-8
-set encoding=utf-8
-set fileformats=unix,dos,mac
-
-" 入力中のコマンドをステータスに表示する
-set showcmd
-
-" カーソル行を強調表示しない
-autocmd InsertEnter,InsertLeave * set cursorline!
-
-" カーソル列を強調表示しない
-set nocursorcolumn
-
-" 挿入モードの時のみ、カーソル列をハイライトする
-autocmd InsertEnter,InsertLeave * set cursorcolumn!
-
-"タブ入力を複数の空白入力に置き換える
-set expandtab
-
-"改行時に前の行のインデントを継続する
-set autoindent
-
-"改行時に入力された行の末尾に合わせて次の行のインデントを増減する
-set smartindent
-
-" ステータス行を常に表示
-set laststatus=2
-
-" メッセージ表示欄を2行確保
-set cmdheight=2
-
-" 対応する括弧を強調表示
-set showmatch
-
-" 検索文字列をハイライトする
+" 検索した時にハイライト
 set hlsearch
 
 " インクリメンタルサーチを行う
 set incsearch
-
-" 大文字と小文字を区別しない
-set ignorecase
-
-" 最後尾まで検索を終えたら次の検索で先頭に移る
-set wrapscan
 
 " ハイライトをESC×2回で消す
 nnoremap <silent> <Esc><Esc> :noh<CR>
@@ -155,15 +61,59 @@ autocmd InsertLeave * set hlsearch
 " 保存時に行末スペースを削除
 autocmd BufWritePre * :%s/\s\+$//ge
 
-" 行番号を追加
-set number
+" vim の矩形選択で文字が無くても右へ進める
+set virtualedit=block
 
-" アップデートタイムを高速化（git用）
-set updatetime=250
+" 挿入モードでバックスペースで削除できるようにする
+set backspace=indent,eol,start
 
-" -------------------------------
-" タブ機能を強化
-" -------------------------------
+" キーバインド------------------------------------------------------------------
+
+" xで削除した時はヤンクしない
+vnoremap x "_x
+nnoremap x "_x
+
+" 1 で行頭に移動
+nnoremap 1 ^
+
+" 2で行末に移動
+nnoremap 2 $
+
+" 9 で前のバッファタブへ
+nnoremap <silent> 9 :bprev<CR>
+
+" 0 で次のバッファタブへ
+nnoremap <silent> 0 :bnext<CR>
+
+" Option + | でファイル内の文字置換
+nnoremap \ :%s/old/new/g<LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT>
+
+" 現在のバッファ削除
+nnoremap bd :bd<CR>
+
+" 括弧の補完
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
+
+" クオーテーションの補完
+inoremap ' ''<LEFT>
+inoremap " ""<LEFT>
+
+" visulaモードでインデント調整後に選択範囲を開放しない
+vnoremap > >gv
+vnoremap < <gv
+
+" 画面分割系
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap ss :<C-u>sp<CR><C-w>j
+nnoremap sv :<C-u>vs<CR><C-w>l
+
+" jjで挿入モード終了＆保存
+inoremap <silent> jj <ESC>:w<CR>
 
 " タブ間を移動
 nnoremap s <Nop>
@@ -172,133 +122,23 @@ nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
 
-" 分割したウインドウそのものを移動する
-nnoremap sJ <C-w>J
-nnoremap sK <C-w>K
-nnoremap sL <C-w>L
-nnoremap sH <C-w>H
-
-" 大きさを揃える
-nnoremap s= <C-w>=
-nnoremap sO <C-w>=
-
-" 新規タブ
-nnoremap st :<C-u>tabnew<CR>
-
-" 水平分割
-nnoremap ss :<C-u>sp<CR>
-
-" 垂直分割
-nnoremap sv :<C-u>vs<CR>
-
-" ウインドウを閉じる
-nnoremap sq :<C-u>q<CR>
-
-" qのみでquit
-nnoremap q :<C-u>q<CR>
-
-" クリップボードと連携
-set clipboard=unnamed,autoselect
-vnoremap <C-y> "+y
-
-" スワップファイルを作成しない
-set noswapfile
-
-" --------------------------------
-" neocomplete.vim
-" --------------------------------
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
-
-"----------------------------------------------------------
-" molokaiの設定
-"----------------------------------------------------------
-colorscheme molokai
-set t_Co=256
-execute pathogen#infect()
-syntax on
-
-" ファイル形式の検出を有効化する
-filetype on
-
-" ファイル形式別インデントのロードを有効化する
-filetype indent on
-
-" ファイル形式別プラグインのロードを有効化する
-filetype plugin indent on
-
-" ctagsの設定
-nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
-nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
-nnoremap <C-b> g<C-]>
-
-" インデント幅の設定
-if has("autocmd")
-  "ファイルタイプの検索を有効にする
-  filetype plugin on
-  "ファイルタイプに合わせたインデントを利用
-  filetype indent on
-  "sw=softtabstop, sts=shiftwidth, ts=tabstop, et=expandtabの略
-  autocmd FileType c           setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType html        setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType ruby        setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType js          setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType zsh         setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType python      setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType scala       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType json        setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType html        setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType css         setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType scss        setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType sass        setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType javascript  setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType jsx         setlocal sw=2 sts=2 ts=2 et
-endif
-
-" バッファコマンドの追加
-nnoremap <silent>bp :bprevious<CR>
-nnoremap <silent>bn :bnext<CR>
-nnoremap <silent>bb :b#<CR>
-
 " 挿入モードでカーソルを右に移動する
 imap <C-l> <Right>
 
-" space2回でカーソル下の単語をハイライトする
-nnoremap <silent> <Space><Space> "zyiw:let @/ = @z<CR>:set hlsearch<CR>
-" ＃を押すとカーソル下単語をハイライトしてから置換後文字列を入力する状態にする
-nmap # <Space><Space>:%s/<C-r>///gc<Left><Left><Left>
+" plugin manager ---------------------------------------------
 
-" 改行コマンド
-if !has('gui_running')
-  " CUIで入力された<S-CR>,<C-S-CR>が拾えないので
-  " iTerm2のキー設定を利用して特定の文字入力をmapする
-  map ✠ <S-CR>
-  imap ✠ <S-CR>
-  map ✢ <C-S-CR>
-  imap ✢ <C-S-CR>
+" 4章で紹介
+
+" ------------------------------------------------------------
+
+" カラースキーム(任意です)
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
 endif
-imap <S-CR> <End><CR>
-imap <C-S-CR> <Up><End><CR>
-nnoremap <S-CR> mzo<ESC>`z
-nnoremap <C-S-CR> mzO<ESC>`z
 
-" 自動囲みコマンド
-vnoremap { "zdi{<C-R>z}<ESC>
-vnoremap [ "zdi[<C-R>z]<ESC>
-vnoremap ( "zdi(<C-R>z)<ESC>
-vnoremap " "zdi"<C-R>z"<ESC>
-vnoremap ' "zdi'<C-R>z'<ESC>
-
-" タブ設定
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
-" 閉じタグに飛ぶ
-source /usr/local/share/vim/vim81/macros/matchit.vim
-let b:match_words = '<:>,<div.*>:</div>'
+syntax on
