@@ -71,3 +71,9 @@ hook_add = '''
   let g:ale_keep_list_window_open=0
   let g:ale_javascript_prettier_use_local_config=1
 '''
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+hook_add = '''
+    vnoremap ? :'<,'>TComment<CR>
+'''
