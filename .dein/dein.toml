@@ -26,3 +26,15 @@ hook_add = '''
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=237
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=240
 '''
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+    set signcolumn=yes
+    let g:gitgutter_async = 1
+    let g:gitgutter_sign_modified = 'rw'
+    highlight GitGutterAdd ctermfg=green
+    highlight GitGutterChange ctermfg=yellow
+    highlight GitGutterDelete ctermfg=red
+    highlight GitGutterChangeDelete ctermfg=yellow
+'''
