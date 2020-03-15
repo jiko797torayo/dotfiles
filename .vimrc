@@ -175,6 +175,8 @@ nnoremap <silent> , :bprev<CR>
 nnoremap <silent> . :bnext<CR>
 " bdで現在のバッファを削除
 nnoremap bd :bd<CR>
+" bbで直前のバッファを表示
+nnoremap <silent>bb :b#<CR>
 
 " plugin manager ---------------------------------------------
 
