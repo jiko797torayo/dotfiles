@@ -76,7 +76,6 @@ set softtabstop=2
 set autoindent
 set smartindent
 set shiftwidth=2
-au FileType go setlocal sw=4 ts=4 sts=4 noet
 
 " 挿入モードでバックスペース削除を有効
 set backspace=indent,eol,start
@@ -194,4 +193,7 @@ if (empty($TMUX))
   endif
 endif
 
+colorscheme molokai
+set t_Co=256
+execute pathogen#infect()
 syntax on
