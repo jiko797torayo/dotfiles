@@ -195,5 +195,4 @@ endif
 
 colorscheme molokai
 set t_Co=256
-execute pathogen#infect()
 syntax on
