@@ -136,10 +136,6 @@ inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
-" クオーテーションの補完
-" inoremap ' ''<LEFT>
-inoremap " ""<LEFT>
-
 " visulaモードでインデント調整後に選択範囲を開放しない
 vnoremap > >gv
 vnoremap < <gv
