@@ -130,6 +130,7 @@ alias bercre='bundle exec rails credentials:edit'
 alias brsp='bin/rspec'
 alias berubogen='bundle exec rubocop --auto-gen-config --exclude-limit=99999 --no-offense-counts --no-auto-gen-timestamp'
 alias beruboa='bundle exec rubocop -a'
+alias berubo='bundle exec rubocop'
 
 # --------------------------------------------------
 #  pythonのエイリアス
