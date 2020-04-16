@@ -127,6 +127,7 @@ alias becsc='bundle exec cap staging rails:c'
 alias bers='bundle exec rails s'
 alias becpd='bundle exec cap production deploy'
 alias bercre='bundle exec rails credentials:edit'
+alias brsp='bin/rspec'
 
 # --------------------------------------------------
 #  pythonのエイリアス
