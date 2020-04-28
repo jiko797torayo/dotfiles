@@ -15,12 +15,21 @@ Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-surround'
+Plug 'Shougo/neocomplete.vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'slim-template/vim-slim'
+Plug 'posva/vim-vue'
+Plug 'elzr/vim-json'
+Plug 'alvan/vim-closetag'
 call plug#end()
 
 packloadall                
 silent! helptags ALL
 
-" vim-itgutterの設定
+" vim-gitgutterの設定
 set signcolumn=yes
 set updatetime=250
 highlight GitGutterAdd ctermfg=green
@@ -105,6 +114,7 @@ inoremap <silent> jj <ESC>:w<CR>
 
 " 挿入モードでカーソルを右に移動する
 inoremap <C-l> <Right>
+inoremap <C-k> <C-p>
 
 nnoremap <C-g> :Rg<Space>
 
@@ -134,6 +144,14 @@ command! Bd :bp | :sp | :bn | :bd
 
 set laststatus=2
 set showcmd
+
+" 画面分割系
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap ss :<C-u>sp<CR><C-w>j
+nnoremap sv :<C-u>vs<CR><C-w>l
 
 
 set t_Co=256
