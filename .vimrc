@@ -24,10 +24,12 @@ Plug 'slim-template/vim-slim'
 Plug 'posva/vim-vue'
 Plug 'elzr/vim-json'
 Plug 'alvan/vim-closetag'
+Plug 'cohama/lexima.vim'
 call plug#end()
 
 packloadall                
 silent! helptags ALL
+set noswapfile
 
 " vim-gitgutterの設定
 set signcolumn=yes
