@@ -135,7 +135,8 @@ endif
 set undodir=$HOME/.vim/undodir
 set hlsearch
 set incsearch
-set clipboard=unnamed,unnamedplus
+" クリップボードと連携
+set clipboard=unnamed,autoselect
 
 noremap <c-h> <c-w><c-h>
 noremap <c-j> <c-w><c-j>
