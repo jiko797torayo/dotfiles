@@ -6,6 +6,7 @@ export PATH="$PATH:$HOME/.fzf/bin"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 30% --border'
 export PATH=$HOME/.local/bin:$PATH
+export PATH="$PATH:/Users/koji/Developer/flutter/bin"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(rbenv init - zsh)"
@@ -306,3 +307,4 @@ function expand-or-complete-prefix-incr
 	fi
 }
 export PATH=$PATH:/Users/koji/.nodebrew/current/bin
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"

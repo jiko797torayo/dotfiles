@@ -7,6 +7,7 @@ endif
 call plug#begin()
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jremmen/vim-ripgrep'
@@ -25,11 +26,13 @@ Plug 'posva/vim-vue'
 Plug 'elzr/vim-json'
 Plug 'alvan/vim-closetag'
 Plug 'cohama/lexima.vim'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 packloadall                
 silent! helptags ALL
 set noswapfile
+set number
 
 " vim-gitgutterの設定
 set signcolumn=yes
