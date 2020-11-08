@@ -7,6 +7,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 30% --border'
 export PATH=$HOME/.local/bin:$PATH
 export PATH="$PATH:/Users/koji/Developer/flutter/bin"
+export PATH=$PATH:/Users/koji/Library/Android/sdk/platform-tools
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(rbenv init - zsh)"
@@ -123,7 +124,7 @@ alias ber='bundle exec rake'
 alias berr='bundle exec rake routes'
 alias berdc='bundle exec rake db:create'
 alias berdm='bundle exec rake db:migrate'
-alias bi='bundle install --path vendor/bundle'
+alias bi='bundle install'
 alias becsd='bundle exec cap staging deploy'
 alias becsc='bundle exec cap staging rails:c'
 alias becpc='bundle exec cap production rails:c'
@@ -156,6 +157,8 @@ alias vm='vim ~/marketplace'
 alias va='vim ~/app_ranking_app'
 alias vk='vim ~/kura-vel'
 alias vp='vim ~/popai-sekine'
+alias chokojizsh='sudo chown koji:staff /usr/local/share/zsh/'
+alias chokojisite='sudo chown koji:staff /usr/local/share/zsh/site-functions'
 
 # --------------------------------------------------
 #  コマンド履歴対策
@@ -188,12 +191,12 @@ bindkey -M emacs '^?' backward-delete-char-incr
 bindkey -M emacs '^i' expand-or-complete-prefix-incr
 
 unsetopt automenu
-compdef -d scp
-compdef -d tar
-compdef -d make
-compdef -d java
-compdef -d svn
-compdef -d cvs
+# compdef -d scp
+# compdef -d tar
+# compdef -d make
+# compdef -d java
+# compdef -d svn
+# compdef -d cvs
 
 now_predict=0
 
@@ -308,3 +311,6 @@ function expand-or-complete-prefix-incr
 }
 export PATH=$PATH:/Users/koji/.nodebrew/current/bin
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH=/Users/koji/.nodebrew/current/bin:/Users/koji/.nodebrew/current/bin:/usr/local/opt/mysql@5.7/bin:/Users/koji/.rbenv/shims:/Users/koji/.local/bin:/Users/koji/Library/Android/sdk/platform-tools:/Users/koji/.rbenv/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/opt/X11/bin:/Library/Apple/usr/bin:/Users/koji/.fzf/bin:/Users/koji/Developer/flutter/bin:/Users/koji/.nodebrew/current/bin
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
