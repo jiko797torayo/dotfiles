@@ -159,6 +159,8 @@ alias vk='vim ~/kura-vel'
 alias vp='vim ~/popai-sekine'
 alias chokojizsh='sudo chown koji:staff /usr/local/share/zsh/'
 alias chokojisite='sudo chown koji:staff /usr/local/share/zsh/site-functions'
+alias zshkoji='sudo chown koji /usr/local/share/zsh/; sudo chown koji /usr/local/share/zsh/site-functions/; sudo chown koji /usr/local/share/zsh/site-functions/_aws; sudo chown koji /usr/local/share/zsh/site-functions/_brew; sudo chown koji /usr/local/share/zsh/site-functions/_brew_cask; sudo chown koji /usr/local/share/zsh/site-functions/_brew_services;'
+alias zshkuraoec='sudo chown kuraoec /usr/local/share/zsh/; sudo chown kuraoec /usr/local/share/zsh/site-functions/; sudo chown kuraoec /usr/local/share/zsh/site-functions/_aws; sudo chown kuraoec /usr/local/share/zsh/site-functions/_brew; sudo chown kuraoec /usr/local/share/zsh/site-functions/_brew_cask; sudo chown kuraoec /usr/local/share/zsh/site-functions/_brew_services;'
 
 # --------------------------------------------------
 #  コマンド履歴対策
